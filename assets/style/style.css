@@ -6,17 +6,28 @@
 
 
 header {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(0, 204, 255);
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 header h1 {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 53px;
   margin: 0;
+  width: 100%;
+  text-align: center;
 }
 
 header nav ul {
-  display: flex;
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
 }
 
 .hero {
