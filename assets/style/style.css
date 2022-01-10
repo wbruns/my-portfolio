@@ -20,7 +20,6 @@ header {
   background-color: var(--primary-color);
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 100%;
   padding: 10px;
 }
@@ -37,6 +36,11 @@ header h1 {
 header nav ul {
   list-style: none;
   font-size: 24px;
+  display: flex;
+}
+
+header nav ul li a {
+  border-bottom: 3px solid black;
 }
 
 header a {
@@ -52,18 +56,22 @@ header a {
 
 .hero img {
   margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sections {
+  padding: 0 30px 20px 30px;
 }
 
 main h2 {
   font-size: 48px;
   border-bottom: 5px solid black;
-  border-bottom-width: 80%;
   padding-top: 20px;
 }
 
 .intro {
   background-color: var(--primary-color);
-  padding: 0 30px 20px 30px;
 }
 
 .intro p {
@@ -77,17 +85,40 @@ main h2 {
 .work-examples {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .work-box {
-  margin: 0 15px 0 15px;
-  flex: 1;
+  margin: 2% 5%;
 }
 
 .work-box img {
   width: 100%;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.work-text {
+  position: absolute;
 }
 
 .contact {
   background-color: var(--primary-color);
+}
+
+.contact div ul {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.contact div ul li {
+  list-style: none;
+  justify-content: space-between;
+  flex: 0 1 100%;
+  font-size: 24px;
+}
+
+.contact div ul li a {
+  text-decoration: none;
 }
