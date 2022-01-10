@@ -31,6 +31,7 @@ header h1 {
   width: 100%;
   text-align: center;
   padding-bottom: 10px;
+  color: rgb(66, 73, 73);
 }
 
 header nav ul {
@@ -90,17 +91,21 @@ main h2 {
 
 .work-box {
   margin: 2% 5%;
+  position: relative;
 }
 
 .work-box img {
   width: 100%;
   border-radius: 15px;
-  position: relative;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .work-text {
   position: absolute;
+  bottom: 5%;
+  left: 2%;
+  background-color: var(--primary-color);
+  border-radius: 15px;
 }
 
 .contact {
