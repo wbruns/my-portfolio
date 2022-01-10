@@ -169,22 +169,48 @@ footer {
   font-size: 22px;
 }
 
-/* media query for screen sizes 575-768px */
-@media (max-width: 768px) {
+/* media query for screen sizes under 920px */
+@media (max-width: 920px) {
+  /* changing the flex direction to column for mobile devices */
   header {
     flex-direction: column;
     justify-content: center;
   }
 
+  header h1 {
+    text-align: center;
+  }
+
+  /* removing flex from sections */
+  .sections {
+    display: block;
+  }
+
+  /* changing section heading borders to the bottom */
+  main h2 {
+    border-right: none;
+    border-bottom: 5px solid var(--text-header-color);
+    text-align: center;
+  }
 }
 
 
-/* media query for screen sizes 768-980px */
-/* @media screen and (min-width: 768px) {
+/* media query for screen sizes under 570px */
+@media screen and (max-width: 570px) {
+  /* shrinking photo of me to fit screen */
+  .hero img {
+    max-width:100%;
+    height: auto;
+  }
 
+  /* fixing spacing of my contact info */
+  .contact div ul {
+    flex-wrap: wrap;
+  }
+
+  .contact div ul li {
+    margin: 10px 25%;
+    background: var(--primary-color);
+    border-radius: 10px;
+  }
 }
-
-/* media query for 980+px 
-@media screen and (min-width: 980px) {
-
-}  */
