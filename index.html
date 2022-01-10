@@ -11,7 +11,7 @@
   <header>
     <h1>Will Bruns</h1>
     <nav>
-      <!-- navigation links -->
+      <!-- navigation links to rest of page -->
       <ul>
         <li>
           <a href="#about-me">About Me</a>
@@ -30,6 +30,8 @@
   </section>
   <main>
     <!-- bio section -->
+    <!-- declaring multiple classes to control the sections in general
+     and be able to change parts of each one specifically -->
     <section id="about-me" class="sections intro">
       <h2>About Me</h2>
       <div>
@@ -46,8 +48,11 @@
       <h2>My Work</h2>
       <div class="work-examples">
         <!-- separated each example into a 'work-box' -->
+        <!-- nesting work-box's into another flexbox -->
         <div class="work-box run-buddy">
           <a href="https://wbruns.github.io/run-buddy/">
+            <!-- wrapping entire work-box in the anchor element
+             so that the whole thing is clickable -->
             <img src="./assets/images/runbuddy-screen.png" alt="a screenshot of Run Buddy's home page" />
             <div class="work-text">
               <h3>Run Buddy</h3>
@@ -84,6 +89,7 @@
             <p>(314) 703-6125</p>
           </li>
           <li>
+            <!-- mailto link will pull up the user's default mail app -->
             <a href = "mailto:wbruns07@gmail.com">wbruns07@gmail.com</a>
           </li>
           <li>
