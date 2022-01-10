@@ -22,34 +22,43 @@ body {
 /* flexbox for h1 and nav */
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: var(--primary-color);
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px;
 }
 
 header h1 {
+  flex: 4 1 auto;
   font-weight: bold;
   font-size: 60px;
   margin: 0;
   width: 100%;
-  text-align: center;
+  text-align: start;
   padding-bottom: 10px;
   color: var(--text-header-color);
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+header nav {
+  flex: 1 1 auto;
+}
 /* restating display to put list inline */
 header nav ul {
   list-style: none;
-  font-size: 24px;
-  display: inline-flex;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-content: center;
 }
 
 header nav ul li a {
   border-bottom: 3px solid var(--text-header-color);
+  margin: 0 5px;
+  font-weight: lighter;
+  font-size: 24px;
 }
 
 header a {
@@ -57,7 +66,7 @@ header a {
 }
 
 .hero {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   height: auto;
   display: flex;
   justify-content: center;
@@ -71,31 +80,48 @@ header a {
 
 .sections {
   padding: 0 30px 20px 30px;
+  display: flex;
 }
 
-main h2 {
-  font-size: 48px;
-  border-bottom: 5px solid var(--text-header-color);
-  padding-top: 20px;
-  color: var(--text-header-color);
-}
-
-.intro {
-  background-color: var(--primary-color);
-}
-
-.intro p {
-  padding-top: 20px;
-}
-
-.work {
+main {
   background-color: var(--secondary-color);
 }
+main h2 {
+  font-size: 36px;
+  border-right: 5px solid var(--text-header-color);
+  padding-top: 20px;
+  padding-right: 20px;
+  color: var(--text-header-color);
+  flex: 1 1 20%;
+  text-align: right;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
+.sections div {
+  flex: 5 1 80%;
+}
+.intro p {
+  padding-top: 20px;
+  margin-left: 5%;
+  text-align: left;
+}
+
+/* nested flexbox for displaying work examples */
 .work-examples {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.run-buddy {
+  flex: 2 1 auto;
+}
+
+.robot-gladiators {
+  flex: 1 1 auto;
+}
+
+.horiseon {
+  flex: 1 1 auto;
 }
 
 /* relative positioning so that .work-text can lay over img */
@@ -106,6 +132,7 @@ main h2 {
 
 .work-box img {
   width: 100%;
+  height: 100%;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -118,10 +145,6 @@ main h2 {
   border-radius: 15px;
   font-size: larger;
   color: var(--text-header-color);
-}
-
-.contact {
-  background-color: var(--primary-color);
 }
 
 .contact div ul {
@@ -141,28 +164,18 @@ main h2 {
   color: var(--text-header-color);
 }
 
+footer {
+  background-color: var(--primary-color);
+  font-size: 22px;
+}
+
 /* media query for screen sizes 575-768px */
-@media (min-width: 575px) {
-
-  .work-examples {
-    flex-flow: row wrap;
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .work-box img {
-    height: 100%;
-  }
-
-  .run-buddy {
-    flex: 2 1 100%;
-  }
-
-  .robot-gladiators {
-    flex: 1 1 40%;
-  }
-
-  .horiseon {
-    flex: 1 1 40%;
-  }
 }
 
 
