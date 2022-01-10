@@ -1,19 +1,25 @@
 /* custom color variables */
 :root {
-  --primary-color: rgb(0, 204, 255);
-  --secondary-color: rgb(0, 255, 204);
+  --primary-color: rgb(145, 200, 244);
+  --secondary-color: rgb(221, 240, 255);
+  --text-header-color: rgb(39, 55, 70);
 }
 
+/* universal resets */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+/* styles for screen sizes <575px */
 body {
   text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, helvetica;
+  color: var(--text-header-color);
 }
 
+/* flexbox for h1 and nav */
 header {
   display: flex;
   flex-direction: column;
@@ -31,17 +37,19 @@ header h1 {
   width: 100%;
   text-align: center;
   padding-bottom: 10px;
-  color: rgb(66, 73, 73);
+  color: var(--text-header-color);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* restating display to put list inline */
 header nav ul {
   list-style: none;
   font-size: 24px;
-  display: flex;
+  display: inline-flex;
 }
 
 header nav ul li a {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--text-header-color);
 }
 
 header a {
@@ -67,8 +75,9 @@ header a {
 
 main h2 {
   font-size: 48px;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid var(--text-header-color);
   padding-top: 20px;
+  color: var(--text-header-color);
 }
 
 .intro {
@@ -89,6 +98,7 @@ main h2 {
   justify-content: center;
 }
 
+/* relative positioning so that .work-text can lay over img */
 .work-box {
   margin: 2% 5%;
   position: relative;
@@ -106,6 +116,8 @@ main h2 {
   left: 2%;
   background-color: var(--primary-color);
   border-radius: 15px;
+  font-size: larger;
+  color: var(--text-header-color);
 }
 
 .contact {
@@ -126,4 +138,40 @@ main h2 {
 
 .contact div ul li a {
   text-decoration: none;
+  color: var(--text-header-color);
 }
+
+/* media query for screen sizes 575-768px */
+@media (min-width: 575px) {
+
+  .work-examples {
+    flex-flow: row wrap;
+  }
+
+  .work-box img {
+    height: 100%;
+  }
+
+  .run-buddy {
+    flex: 2 1 100%;
+  }
+
+  .robot-gladiators {
+    flex: 1 1 40%;
+  }
+
+  .horiseon {
+    flex: 1 1 40%;
+  }
+}
+
+
+/* media query for screen sizes 768-980px */
+/* @media screen and (min-width: 768px) {
+
+}
+
+/* media query for 980+px 
+@media screen and (min-width: 980px) {
+
+}  */
